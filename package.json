@@ -1,0 +1,80 @@
+{
+  "name": "nestjs-a2a",
+  "version": "0.0.1",
+  "description": "NestJS module for creating Google Agent to Agent Server",
+  "license": "MIT",
+  "author": {
+    "name": "Thieu Quan Ngoc",
+    "email": "me@stupd.dev",
+    "url": "https://stupd.dev"
+  },
+  "repository": "https://github.com/thestupd/nestjs-a2a",
+  "bugs": "https://github.com/thestupd/nestjs-a2a/issues",
+  "private": false,
+  "source": "lib/index.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build:dist": "pnpm clean:dist && tsc -p tsconfig.build.json",
+    "test:run": "NODE_ENV=test jest",
+    "test:watch": "pnpm test:run --watch",
+    "test:coverage": "pnpm clean:test && pnpm test:run --coverage",
+    "type-check": "tsc --noEmit",
+    "lint": "eslint --fix . --ext .js,.ts",
+    "clean:dist": "rimraf dist",
+    "clean:test": "rimraf coverage",
+    "postinstall": "husky install",
+    "prepublishOnly": "pinst --disable",
+    "postpublish": "pinst --enable",
+    "prepare": "husky",
+    "start:example": "ts-node-dev --respawn example/app.ts"
+  },
+  "keywords": [
+    "nestjs",
+    "llm",
+    "a2a",
+    "google-a2a",
+    "typescript"
+  ],
+  "peerDependencies": {
+    "@nestjs/common": "^11.0.0",
+    "@nestjs/core": "^11.0.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
+    "@nestjs/common": "^11.0.14",
+    "@nestjs/core": "^11.0.14",
+    "@nestjs/platform-express": "^11.0.15",
+    "@nestjs/testing": "^11.0.14",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@types/express": "^5.0.1",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.14.0",
+    "@typescript-eslint/eslint-plugin": "^8.29.1",
+    "@typescript-eslint/parser": "^8.29.1",
+    "dotenv": "^16.4.7",
+    "eslint": "^9.24.0",
+    "eslint-config-prettier": "^10.1.1",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-prettier": "^5.2.6",
+    "husky": "^9.1.7",
+    "jest": "^29.7.0",
+    "lint-staged": "^15.5.0",
+    "pinst": "^3.0.0",
+    "prettier": "^3.5.3",
+    "reflect-metadata": "^0.2.2",
+    "rimraf": "^6.0.1",
+    "rxjs": "^7.8.2",
+    "semantic-release": "^24.2.3",
+    "ts-jest": "^29.3.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.29.1"
+  }
+}
