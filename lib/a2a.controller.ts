@@ -1,5 +1,6 @@
 import {
   Get,
+  Post,
   Inject,
   UseGuards,
   CanActivate,
@@ -80,7 +81,7 @@ export function createA2AController(basePath?: string, guards?: CanActivate[]) {
     }
 
     @UseGuards(...(guards ?? []))
-    @Get(basePath ?? DEFAULT_A2A_BASE_PATH)
+    @Post(basePath ?? DEFAULT_A2A_BASE_PATH)
     public async agentHandler(
       @Body() body: JSONRPCRequest,
       @Res({ passthrough: true }) response: Response,
