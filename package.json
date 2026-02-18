@@ -27,7 +27,7 @@
     "lint": "eslint --fix . --ext .js,.ts",
     "clean:dist": "rimraf dist",
     "clean:test": "rimraf coverage",
-    "postinstall": "husky install",
+    "postinstall": "pnpm build:dist",
     "prepublishOnly": "pinst --disable",
     "postpublish": "pinst --enable",
     "prepare": "husky",
